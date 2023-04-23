@@ -3,10 +3,13 @@ import "./App.css";
 
 const StatisticsLine = (props) => {
   return (
-    <p>
-      {props.text} {props.value}
-      {props.text === "positive" ? " %" : ""}
-    </p>
+    <tr>
+      <td>{props.text}</td>
+      <td>
+        {props.value}
+        {props.text === "positive" ? " %" : ""}
+      </td>
+    </tr>
   );
 };
 
@@ -20,12 +23,16 @@ const Statistics = (props) => {
   return (
     <>
       <h2>statistics</h2>
-      <StatisticsLine text="good" value={good} />
-      <StatisticsLine text="neutral" value={neutral} />
-      <StatisticsLine text="bad" value={bad} />
-      <StatisticsLine text="all" value={all} />
-      <StatisticsLine text="average" value={average} />
-      <StatisticsLine text="positive" value={positive} />
+      <table>
+        <tbody>
+          <StatisticsLine text="good" value={good} />
+          <StatisticsLine text="neutral" value={neutral} />
+          <StatisticsLine text="bad" value={bad} />
+          <StatisticsLine text="all" value={all} />
+          <StatisticsLine text="average" value={average} />
+          <StatisticsLine text="positive" value={positive} />
+        </tbody>
+      </table>
     </>
   );
 };
